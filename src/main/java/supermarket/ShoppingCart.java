@@ -5,11 +5,9 @@ import supermarket.products.Product;
 import java.util.HashMap;
 
 public class ShoppingCart {
-    private int shoppingCart_ID;
-    private HashMap<Integer, String> cart = new HashMap<Integer, String>();
+    HashMap<Integer, String> cart = new HashMap<Integer, String>();
     int total_products;
     double total_price;
-    Product product;
 
     public ShoppingCart() {
         Product product1 = new Product("Soap", 6, 1, 8954885);
@@ -35,9 +33,7 @@ public class ShoppingCart {
 
     public int removeProduct(Product product) {
         cart.remove(product.getEAN());
-        product.setQuantity(product.quantity--);
-
-        return product.quantity;
+        return total_products;
     }
 
 
@@ -51,7 +47,4 @@ public class ShoppingCart {
     }
 
 
-    public double calculatePriceofTotal() {
-        return total_price;
-    }
 }
