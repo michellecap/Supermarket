@@ -27,7 +27,7 @@ public class CashRegister {
     public double calculateDiscount() {
 
         total_price = shoppingCart.calculatePriceofTotal();
-        System.out.println("Price without discount: €" + total_price);
+        System.out.println("Your subtotal: €" + total_price);
 
         if(total_price > 10 && total_price <= 20) {
             discount = 0.50;
