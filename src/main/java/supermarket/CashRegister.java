@@ -1,15 +1,9 @@
 package supermarket;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class CashRegister {
     double change;
     double total_price;
     double discount;
-    Object[] obj;
-    List<Object[]> order = new ArrayList<>();
     ShoppingCart shoppingCart;
 
     public CashRegister() {
@@ -26,7 +20,7 @@ public class CashRegister {
 
     public double calculateDiscount() {
 
-        total_price = shoppingCart.calculatePriceofTotal();
+        total_price = calculatePriceofTotal();
         System.out.println("Your subtotal: €" + total_price);
 
         if(total_price > 10 && total_price <= 20) {
@@ -46,6 +40,10 @@ public class CashRegister {
     public double calculateChange() {
 
         return change;
+    }
+
+    public double calculatePriceofTotal() {
+        return shoppingCart.total_price;
     }
 
 }
